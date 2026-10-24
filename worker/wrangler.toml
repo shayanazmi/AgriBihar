@@ -1,0 +1,17 @@
+name = "agribihar-ai"
+main = "agribihar-ai-worker.js"
+compatibility_date = "2025-01-01"
+
+[vars]
+# Exact origin(s) of your site: scheme + host only, no path, no trailing slash.
+# Comma-separated. For local testing add http://localhost:8080 and remove it afterwards.
+ALLOWED_ORIGINS = "https://shayanazmi.github.io"
+# NIM_MODEL = "meta/llama-3.1-8b-instruct"
+
+# Secrets are NOT stored here. Set them with:
+#   wrangler secret put NVIDIA_API_KEY
+#   wrangler secret put TAVILY_API_KEY        (or GOOGLE_API_KEY and GOOGLE_CX)
+#
+# Recommended: add a Cloudflare Rate Limiting binding named RL (see Cloudflare's current docs for the
+# exact wrangler syntax; it was not verified here) and a WAF rate-limiting rule on this Worker's route.
+# Without RL the Worker uses a weak per-instance fallback limiter.
