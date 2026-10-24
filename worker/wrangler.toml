@@ -6,7 +6,7 @@ compatibility_date = "2025-01-01"
 # Exact origin(s) of your site: scheme + host only, no path, no trailing slash.
 # Comma-separated. For local testing add http://localhost:8080 and remove it afterwards.
 ALLOWED_ORIGINS = "https://shayanazmi.github.io"
-# NIM_MODEL = "meta/llama-3.1-8b-instruct"
+# NIM_MODEL = "deepseek-ai/deepseek-v4.1-flash"
 
 # Secrets are NOT stored here. Set them with:
 #   wrangler secret put NVIDIA_API_KEY

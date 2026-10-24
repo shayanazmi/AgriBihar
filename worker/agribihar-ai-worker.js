@@ -121,7 +121,7 @@ Rules: use only the data context, the curated library [L#] and the web results [
 
     let r;
     try {
-      r = await timed(NIM_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + env.NVIDIA_API_KEY }, body: JSON.stringify({ model: env.NIM_MODEL || 'meta/llama-3.1-8b-instruct', messages: [{ role: 'system', content: system }, { role: 'user', content: user }], temperature: 0.2, max_tokens: 700, stream: false }) }, 25000);
+      r = await timed(NIM_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + env.NVIDIA_API_KEY }, body: JSON.stringify({ model: env.NIM_MODEL || 'deepseek-ai/deepseek-v4.1-flash', messages: [{ role: 'system', content: system }, { role: 'user', content: user }], temperature: 0.2, max_tokens: 700, stream: false }) }, 25000);
     } catch { return respond({ error: 'The language model did not answer in time' }, 504, origin, env); }
     if (!r.ok) { console.error('NIM status', r.status); return respond({ error: 'The language model is unavailable' }, 502, origin, env); }
     let j; try { j = await r.json(); } catch { return respond({ error: 'The language model is unavailable' }, 502, origin, env); }
